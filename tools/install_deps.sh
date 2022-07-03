@@ -116,7 +116,8 @@ else
        echo "No problems to repair."
 fi
 
-OPENCV_VERSION=$(/usr/bin/opencv_version)
+# OPENCV_VERSION=$(/usr/bin/opencv_version)
+OPENCV_VERSION=$(pkg-config --modversion opencv)
 read OPENCV_VERSION_MAJOR OPENCV_VERSION_MINOR OPENCV_VERSION_PATCH <<< ${OPENCV_VERSION//[^0-9]/ }
 
 if [[ $OPENCV_VERSION == "3.3.1" ]]; then
