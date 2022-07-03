@@ -133,6 +133,18 @@ else
         done
 fi
 
+# DBoW2
+cd ~ && mkdir FBoW && cd FBoW
+git clone https://github.com/OpenVSLAM-Community/FBoW.git
+cd FBoW
+mkdir build && cd build
+cmake \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr/local \
+    ..
+make -j4
+make install
+
 # G2O
 cd ~ && mkdir g2o && cd g2o
 git clone https://github.com/RainerKuemmerle/g2o.git
