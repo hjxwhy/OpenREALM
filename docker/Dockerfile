@@ -22,11 +22,11 @@ RUN apt-get update && apt-get install -y \
     sudo \
     apt-utils
 
-RUN cd / && wget https://raw.githubusercontent.com/laxnpander/OpenREALM/dev/tools/install_opencv.sh
+RUN cd / && wget https://github.com/hjxwhy/OpenREALM/blob/master/tools/install_opencv.sh
 
 RUN cd / && sed -i 's/sudo //g' install_opencv.sh && bash install_opencv.sh && cd ~ && rm -rf *
 
-RUN wget https://raw.githubusercontent.com/laxnpander/OpenREALM/dev/tools/install_deps.sh
+RUN wget https://github.com/hjxwhy/OpenREALM/blob/master/tools/install_deps.sh
 
 RUN cd / && sed -i 's/sudo //g' install_deps.sh && apt-get update && export DEBIAN_FRONTEND=noninteractive && \
 	bash install_deps.sh && rm -rf /var/lib/apt/lists/*
